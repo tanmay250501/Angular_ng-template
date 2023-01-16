@@ -1,0 +1,609 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+.circle-link {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 8px;
+  background-color: white;
+  border: 1px solid #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 1s ease-out;
+}
+
+.circle-link:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav1 {
+  color: white;
+
+}
+
+.nav1:hover {
+  color: #a09898;
+}
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon {
+color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon {
+color: #4f4f4f;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scrolled {
+background-color: #fff;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  color: black;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 26px;
+}
+
+.button:hover {
+  background-color: #f1f1f1;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-white {
+  color: rgb(255, 255, 255);
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+
+
+/*
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  background-image: url('https://i.redd.it/b3esnz5ra34y.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  transition: 0.4s;
+}
+*/
+
+/*PEN STYLES*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f1f1f1;
+  margin: 2rem;
+}
+
+$color_white: #fff;
+$color_prime: #5ad67d;
+$color_grey: #e2e2e2;
+$color_grey_dark: #a2a2a2;
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, .1);
+  margin-bottom: 1.6%;
+  background: $color_white;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  a {
+    color: inherit;
+    &:hover {
+      color: $color_prime;
+    }
+  }
+  &:hover {
+    .photo {
+      transform: scale(1.3) rotate(3deg);
+    }
+  }
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform .2s;
+  }
+  .details,
+  .details ul {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  .details {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    margin: auto;
+    transition: left .2s;
+    background: rgba(#000, .6);
+    color: $color_white;
+    padding: 10px;
+    width: 100%;
+    font-size: .9rem;
+    a {
+      text-decoration: dotted underline
+    }
+    ul li {
+      display: inline-block;
+    }
+    .author:before {
+      font-family: FontAwesome;
+      margin-right: 10px;
+      content: "\f007";
+    }
+
+    .date:before {
+      font-family: FontAwesome;
+      margin-right: 10px;
+      content: "\f133";
+    }
+
+    .tags {
+      ul:before {
+        font-family: FontAwesome;
+        content: "\f02b";
+        margin-right: 10px;
+      }
+      li {
+        margin-right: 2px;
+        &:first-child {
+          margin-left: -4px;
+        }
+      }
+    }
+  }
+  .description {
+    padding: 1rem;
+    background: $color_white;
+    position: relative;
+    z-index: 1;
+    h1,
+    h2 {
+      font-family: Poppins, sans-serif;
+    }
+    h1 {
+      line-height: 1;
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      color: $color_grey_dark;
+      margin-top: 5px;
+    }
+    .read-more {
+      text-align: right;
+      a {
+        color: $color_prime;
+        display: inline-block;
+        position: relative;
+        &:after {
+          content: "\f061";
+          font-family: FontAwesome;
+          margin-left: -10px;
+          opacity: 0;
+          vertical-align: middle;
+          transition: margin .3s, opacity .3s;
+        }
+
+        &:hover:after {
+          margin-left: 5px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  p {
+    position: relative;
+    margin: 1rem 0 0;
+    &:first-of-type {
+      margin-top: 1.25rem;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: $color_prime;
+        width: 35px;
+        top: -0.75rem;
+        border-radius: 3px;
+      }
+    }
+  }
+  &:hover {
+    .details {
+      left: 0%;
+    }
+  }
+
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    max-width: 700px;
+    .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+    .description {
+      flex-basis: 60%;
+      &:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+    &.alt {
+      flex-direction: row-reverse;
+      .description {
+        &:before {
+          left: inherit;
+          right: -10px;
+          transform: skew(3deg)
+        }
+      }
+      .details {
+        padding-left: 25px;
+      }
+    }
+  }
+}
+
+
+.button0{
+ 
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 50%;
+  border: none;
+}
+.button2 {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.button2:hover {
+  opacity: 0.8;
+}
+
+
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 10;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+.button3 {
+  width: auto;
+  padding: 10px 30px;
+  background-color: #f44336;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  
+}
+.button3:hover {
+  opacity: 0.8;
+}
+
+.success {
+  border-color: white;
+  color: white;
+  
+}
+
+.success:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+.danger {
+  border-color: white;
+  color: white;
+
+}
+
+.danger:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.success2 {
+background-color:#4CAF50 ;
+
+color: white;
+
+}
+
+.success2:hover {
+background-color: #04aa6d;
+color: white;
+}
+.danger2 {
+background-color: rgb(233, 61, 61);
+color: white;
+
+}
+
+.danger2:hover {
+background-color: rgb(248, 7, 7);
+color: white;
+}
+
+
+.b1 {
+background-color: rgb(247, 247, 247);
+color: rgb(0, 0, 0);
+opacity: 0.7;
+}
+
+.button5 {
+background-color:rgb(245, 185, 21);
+border: none;
+color: black;
+padding: 3px 10px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 16px;
+}
+.button5:hover {
+background-color: rgb(230, 186, 66);
+}
+
+p {
+font-family: Lato;
+}
+
+
+
+.container a {
+
+color: rgb(255, 255, 255);
+}
+
+#project1 a:hover {
+color: rgb(255, 0, 0);
+}
+
+
+
+a {
+
+  text-decoration: none;
+}
+.button9 {
+  background-color: rgb(24, 189, 3);
+  border: none;
+  color: black;
+  padding: 10px 214px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px ;
+  margin-top: 15px ;
+  margin-left: 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.button9:hover {
+  background-color: #24b906;
+}
+
+.btn {
+  
+  
+  color: rgb(255, 255, 255);
+  
+  font-size: 16px;
+  cursor: pointer;
+}
+.danger5 {
+  border-color: rgb(243, 13, 82);
+  padding: 14px 50px;
+  
+}
+
+.danger5:hover {
+  opacity: 30px;
+  background-color: rgb(243, 13, 82);
+  color: white;
+}  
+
+.button10 {
+  background-color: rgb(46, 140, 228);
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 35px;
+  margin-left: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button10:hover {
+  background-color: #000000;
+  color: white;
+  
+}
+
+
+
+.fr1{
+  background-color: rgb(236, 255, 206);
+}
+
+.fc{
+  float:left;
+}
+.panel-body {
+  overflow-y: scroll;
+  height: 300px;
+}
+.fl{
+  float:right;
+}
+
+.c{
+  float:center;
+}
+
+.avatar1 {
+vertical-align: middle;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+}
+
+.sb{
+overflow: scroll;
+}
+hr{
+//   width: 300px;margin-left: auto;margin-right: auto;height: 100px;
+background-color:black;
+color: black;
+opacity: 1;
+margin-top: 10px;
+margin-bottom: 20px;
+height: 100px,
+}
+
+
+
+
